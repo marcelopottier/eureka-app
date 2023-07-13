@@ -2,7 +2,7 @@
   <div class="space-y-4">
     <Textinput
       label="Nome Completo"
-      name="v_Fullname"
+      name="fullname"
       type="text"
       placeholder="Nome Completo"
     />
@@ -30,10 +30,11 @@
       type="institute"
       placeholder="Instituto"
     />
-    <Button text="Cadastrar" btnClass="btn-dark"/>
+    <Button @click="register" text="Cadastrar" btnClass="btn-dark"/>
   </div>
 </template>
 <script>
+import AuthenticationService from "@/plugins/AuthenticationService";
 import Textinput from "@/components/Textinput";
 import Checkbox from "@/components/Checkbox";
 import Button from "@/components/Button";
@@ -44,6 +45,18 @@ export default {
     Checkbox,
     Button,
   },
+  methods: {
+    async register (){
+      const response = await AuthenticationService.register({
+        fullName: this.fullname,
+        email: this.v_email,
+        phone: this.v_phone,
+        school: this.v_school,
+        institute: this.v_institute
+      })
+      console.log(response.data);
+    }
+  }
 };
 </script>
 <style lang=""></style>

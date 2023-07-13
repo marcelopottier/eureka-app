@@ -1,11 +1,16 @@
 import express from 'express';
 
 const app = express();
+const cors = require('cors');
+const {sequelize} = require('./models')
+const config = require('./config/config')
 
-app.get('/users', (request, response) => {
-  return response.send('Hello World!');
-});
+app.use(cors());
 
-app.listen(3333, () => {
-  console.log('HTTP Server running!');
-});
+require('routes')(app)
+
+sequelize.sync()
+    .then(() => {
+        app.listen(config.port)
+        console.log('HTTP Server running!');
+    })
