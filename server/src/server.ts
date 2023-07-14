@@ -1,16 +1,15 @@
 import express from 'express';
+import dotenv from 'dotenv';
+import { allRoutes } from './routes';
+dotenv.config();
 
+const PORT = process.env.PORT || 3333;
 const app = express();
 const cors = require('cors');
-const {sequelize} = require('./models')
 const config = require('./config/config')
 
 app.use(cors());
 
-require('routes')(app)
+allRoutes(app);
 
-sequelize.sync()
-    .then(() => {
-        app.listen(config.port)
-        console.log('HTTP Server running!');
-    })
+app.listen(PORT, () => console.log('Server iniciado na porta ' + PORT));
