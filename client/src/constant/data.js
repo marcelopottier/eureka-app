@@ -16,6 +16,21 @@ export const menuItems = [
     link: 'Home'
   },
   {
+    title: "Processos",
+    icon: "heroicons-outline:clipboard-document-list",
+    link: "#",
+    child: [
+      {
+        childtitle: "Atendimentos",
+        childlink: "client-register",
+      },
+      {
+        childtitle: "",
+        childlink: "user-register",
+      }
+    ]
+  },
+  {
     title: "Cadastros",
     icon: "heroicons-outline:user-plus",
     link: "#",

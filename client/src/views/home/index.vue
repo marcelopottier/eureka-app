@@ -11,6 +11,7 @@
                 <div
                   class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-3"
                 >
+                  <!--ITEMS DE ESTATISTICA DO DASHBOARD-->
                   <div
                     v-for="(item, i) in statistics"
                     :key="i"
@@ -38,7 +39,7 @@
               <div class="xl:col-span-4 col-span-12">
                 <div class="bg-slate-50 dark:bg-slate-900 rounded-md p-4">
                   <span class="block dark:text-slate-400 text-sm text-slate-600"
-                    >Progress</span
+                    >Progresso</span
                   >
                   <apexchart
                     type="donut"
@@ -71,10 +72,10 @@
           </Card>
         </div>
         <div class="lg:col-span-4 col-span-12 space-y-5">
-          <Card title="Notes">
+          <Card title="Agenda">
             <template #header>
               <button type="button" class="btn btn-dark btn-sm">
-                Add More
+                Adicionar
               </button>
             </template>
             <div class="-mx-6 custom-calender">
@@ -85,6 +86,7 @@
               />
             </div>
             <ul class="divide-y divide-slate-100 dark:divide-slate-700">
+              <!--Lista de proximos agendamentos-->
               <li v-for="(item, i) in meets" :key="i" class="block py-[10px]">
                 <div class="flex space-x-2 rtl:space-x-reverse">
                   <div class="flex-1 flex space-x-2 rtl:space-x-reverse">

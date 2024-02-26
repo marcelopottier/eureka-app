@@ -32,13 +32,13 @@
           "
         >
           <img
-            src="@/assets/images/logo/logo.svg"
+            src="@/assets/images/logo/logo-black.png"
             alt=""
             v-if="!this.$store.themeSettingsStore.isDark && !this.$store.themeSettingsStore.semidark"
           />
 
           <img
-            src="@/assets/images/logo/logo-white.svg"
+            src="@/assets/images/logo/logo-no-background.svg"
             alt=""
             v-if="this.$store.themeSettingsStore.isDark || this.$store.themeSettingsStore.semidark"
           />
@@ -51,12 +51,12 @@
           "
         >
           <img
-            src="@/assets/images/logo/logo-c.svg"
+            src="@/assets/images/logo/logo-i-black-svg.png"
             alt=""
             v-if="!this.$store.themeSettingsStore.isDark && !this.$store.themeSettingsStore.semidark"
           />
           <img
-            src="@/assets/images/logo/logo-c-white.svg"
+            src="@/assets/images/logo/logo-i-no-background-svg.png"
             alt=""
             v-if="this.$store.themeSettingsStore.isDark || this.$store.themeSettingsStore.semidark"
           />
