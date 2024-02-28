@@ -1,8 +1,12 @@
 import { Application, Router } from "express"
-import { clientRouter } from "./clients_route";
+import userRoutes from "./userRoutes";
+import clientRoutes from "./clientRoutes";
+import unitRoutes from "./unitRoutes";
 export const allRoutes = (app: Application) => {
     const apiRouter = Router();
-    apiRouter.use('/clients', clientRouter);
-
+    
     app.use('/', apiRouter);
+    app.use('/user', userRoutes);
+    app.use('/client', clientRoutes);
+    app.use('/client', unitRoutes);
 }
